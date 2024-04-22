@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="taxForm">
+
+            <div class="form-group">
+                <label for="income">Enter gross annual Income:</label>
+                <img src = "question.png" title="Gross annual income is your total salary in a year before any deductions" alt="image" height="20px" width="20px"/>
+                <div class="input-group">
+                    <input type="text" id="income" class="form-control" placeholder="Enter gross annual Income" required >
+                    <div id="incomeErrorIcon" class="error-icon hidden" title="Please enter numbers only">!</div>
+
+                </div>
+                <div id="incomeErrorTooltip" class="tooltip hidden">Please enter numbers only</div>
+            </div>
+              
+            <div class="form-group">
+                <label for="extra_income">Enter extra Income:</label>
+                <img src = "question.png" title="Extra income will be added in your total salary in a year before any deductions" alt="image" height="20px" width="20px"/>
+                <div class="input-group">
+                    <input type="text" id="extra_income" class="form-control" placeholder="Enter extra Income from other sources" required>
+                    <div id="extraErrorIcon" class="error-icon hidden" title="Please enter numbers only">!</div>
+                </div> 
+                <div id="extraErrorTooltip" class="tooltip hidden">Please enter numbers only</div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Enter age group</label>
+                <img src = "question.png" title="According to your age group ,tax deduction is decided" alt="image" height="20px" width="20px"/>
+                <select id="age" class="form-control" required>
+                    <option value="">Select Age Group</option>
+                    <option value="under40">Under 40</option>
+                    <option value="40to60">40 to 60</option>
+                    <option value="over60">Over 60</option>
+                </select>
+                <div class="invalid-feedback">Age group is required.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="deductions">Enter total applicable deductions</label>
+                <img src = "question.png" title="This amount will be deducted from your total salary in a year" alt="image" height="20px" width="20px"/>
+                <div class="input-group">
+                    <input type="text" id="deductions" class="form-control" placeholder="Add total applicable deductions">
+                    <div id="deductionsErrorIcon" class="error-icon hidden" title="Please enter numbers only">!</div>
+                </div>
+                <div id="deductionsErrorTooltip" class="tooltip hidden">Please enter numbers only</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="background-color: blueviolet; width: 100%;">Submit</button>
+        
+        </form>
+       
+        <div id="result"></div>
+    </div>
+    <div class="modal" id="taxModal" tabindex="-1" role="dialog" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                    <h5 >Your overall income will be</h5>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="display: block; margin: auto; background-color: rgb(78, 124, 209);">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src = "script.js"></script>
+</body>
+</html>
